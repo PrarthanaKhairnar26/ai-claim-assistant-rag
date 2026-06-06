@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  ai-claim-assistant-api:
+    build: ./AI-Claim-Assistant-API
+    container_name: ai-claim-assistant-api
+    restart: always
+    volumes:
+      - ./AI-Claim-Assistant-API:/app
+    ports:
+      - "8000:8000"
+
+  ai-claim-assistant:
+    build: ./AI-Claim-Assistant
+    container_name: ai-claim-assistant
+    restart: always
+    volumes:
+      - ./AI-Claim-Assistant:/app
+    ports:
+      - "80:80"
+  
